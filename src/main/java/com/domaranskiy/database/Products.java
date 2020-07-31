@@ -20,7 +20,7 @@ public class Products {
     public Products() {
     }
 
-    public static Products getInstance() {
+    public static synchronized Products getInstance() {
         if (instance == null) {
             instance = new Products();
         }

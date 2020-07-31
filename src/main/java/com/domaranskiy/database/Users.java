@@ -19,7 +19,7 @@ public class Users {
     }
 
     public static synchronized Users getInstance() {
-        if (instance == null){
+        if (instance == null) {
             instance = new Users();
         }
         return instance;

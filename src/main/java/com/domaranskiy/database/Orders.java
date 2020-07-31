@@ -12,7 +12,7 @@ public class Orders {
     public Orders() {
     }
 
-    public static Orders getInstance() {
+    public static synchronized Orders getInstance() {
         if (instance == null){
             instance = new Orders();
         }
