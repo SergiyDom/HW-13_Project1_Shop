@@ -26,23 +26,23 @@ public abstract class Menu {
         subItems.add("0. exit");
     }
 
-    protected void setMainItems(String item) {
+    protected void setMainItem(String item) {
         mainItems.add(item);
     }
 
-    protected void setSubItems(String item) {
+    protected void setSubItem(String item) {
         subItems.add(item);
     }
 
-    protected void setInfoFieldItems(String item) {
+    protected void setInfoFieldItem(String item) {
         infoFieldItems.add(item);
     }
 
-    protected void resetInfoFieldItems() {
+    protected void resetInfoFieldItem() {
         infoFieldItems.clear();
     }
 
-    protected void resetMainItems() {
+    protected void resetMainItem() {
         mainItems.clear();
     }
 
@@ -114,12 +114,41 @@ public abstract class Menu {
             }
         }
     }
+
     protected int getMenuItem() throws Exception {
         System.out.println("Your input: ");
         try {
             return Integer.parseInt(scanner.nextLine().trim());
-        }catch (Exception e){
+        } catch (Exception e) {
             throw new Exception("Error getting menu item, the input must be a number");
+        }
+    }
+
+    protected String getLogin() {
+        System.out.print("Login: ");
+        return scanner.nextLine().trim();
+    }
+
+    protected String getPassword() {
+        System.out.print("Password: ");
+        return scanner.nextLine().trim();
+    }
+
+    protected String getName() throws Exception {
+        System.out.print("Name: ");
+        try {
+            return scanner.nextLine().trim();
+        } catch (Exception e) {
+            throw new Exception("Error getting user name");
+        }
+    }
+
+    protected int getAge() throws Exception {
+        System.out.print("Age: ");
+        try {
+            return Integer.parseInt(scanner.nextLine().trim());
+        } catch (Exception e) {
+            throw new Exception("Error getting user age, the age mast be a number");
         }
     }
 }
