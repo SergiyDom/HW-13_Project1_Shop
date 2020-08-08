@@ -1,6 +1,6 @@
-package com.domaranskiy.entities.models.order;
+package com.domaranskiy.models.order;
 
-import com.domaranskiy.entities.models.product.ProductTypes;
+import com.domaranskiy.models.product.ProductTypes;
 import lombok.Getter;
 import lombok.Setter;
 

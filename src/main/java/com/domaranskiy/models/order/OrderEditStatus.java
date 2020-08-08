@@ -1,4 +1,4 @@
-package com.domaranskiy.entities.models.order;
+package com.domaranskiy.models.order;
 
 public enum OrderEditStatus {
     EDITABLE(true, "User can edit order"),

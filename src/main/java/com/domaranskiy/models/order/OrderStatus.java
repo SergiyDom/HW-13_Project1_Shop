@@ -1,4 +1,4 @@
-package com.domaranskiy.entities.models.order;
+package com.domaranskiy.models.order;
 
 public enum OrderStatus {
     IN_CART(true, "In cart"),
