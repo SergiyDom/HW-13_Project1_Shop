@@ -1,7 +1,7 @@
 package com.domaranskiy.database;
 
-import com.domaranskiy.entities.models.order.Order;
-import com.domaranskiy.entities.models.order.OrderStatus;
+import com.domaranskiy.models.order.Order;
+import com.domaranskiy.models.order.OrderStatus;
 
 import java.util.ArrayList;
 import java.util.List;

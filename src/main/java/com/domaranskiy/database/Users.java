@@ -1,7 +1,7 @@
 package com.domaranskiy.database;
 
-import com.domaranskiy.entities.models.user.Roles;
-import com.domaranskiy.entities.models.user.User;
+import com.domaranskiy.models.user.Roles;
+import com.domaranskiy.models.user.User;
 
 import java.util.ArrayList;
 import java.util.List;
