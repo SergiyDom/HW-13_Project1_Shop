@@ -17,10 +17,11 @@ public class ProductListMenu extends AbsUserMenu {
 
     @Override
     protected void navigation() throws Exception {
-        switch (getMenuItem()) {
+        int userInput = getMenuItem();
+        switch (userInput) {
             case 0 -> System.exit(0);
             case -1 -> prevMenu.run();
-            default -> processUserInput(getMenuItem());
+            default -> processUserInput(userInput);
         }
     }
 
