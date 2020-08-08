@@ -1,19 +1,19 @@
-package com.domaranskiy.entities.menues;
+package com.domaranskiy.menues;
 
-import com.domaranskiy.entities.menues.abs.AbsUserMenu;
-import com.domaranskiy.entities.menues.abs.Menu;
-import com.domaranskiy.entities.models.user.User;
+import com.domaranskiy.menues.abs.AbsUserMenu;
+import com.domaranskiy.menues.abs.Menu;
+import com.domaranskiy.models.user.User;
 
 public class UserMenu extends AbsUserMenu {
 
-    public UserMenu(User user, Menu prevMenu) {
+    protected UserMenu(User user, Menu prevMenu) {
         super(user, prevMenu);
 
         setMenuNamePrefix(user.getName());
-        setMainItem("1.Products menu");
-        setMainItem("2.My orders menu");
-        setMainItem("3.PM admin(s)");
-        setMainItem("-1.back");
+        setMainMenuItem("1.Products menu");
+        setMainMenuItem("2.My orders menu");
+        setMainMenuItem("3.PM admin(s)");
+        setMainMenuItem("-1.back");
     }
 
     @Override
@@ -29,14 +29,14 @@ public class UserMenu extends AbsUserMenu {
     }
 
     private void showProductsMenu() {
-        new ProductsMenu(user,this);
+        new ProductsMenu(user,this).run();
     }
 
     private void showOrdersMenu() {
-        new OrdersMenu(user,this);
+        new OrdersMenu(user,this).run();
     }
 
     private void showPMAdminMenu() {
-        new PMAdminMenu(user,this);
+        new PMAdminMenu(user,this).run();
     }
 }

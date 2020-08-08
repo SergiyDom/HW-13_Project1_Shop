@@ -1,8 +1,8 @@
-package com.domaranskiy.entities.menues.abs;
+package com.domaranskiy.menues.abs;
 
 import com.domaranskiy.database.Orders;
 import com.domaranskiy.database.Products;
-import com.domaranskiy.entities.models.user.User;
+import com.domaranskiy.models.user.User;
 
 public abstract class AbsUserMenu extends Menu{
     protected User user;
@@ -13,7 +13,7 @@ public abstract class AbsUserMenu extends Menu{
     public AbsUserMenu(User user, Menu prevMenu) {
         this.user = user;
         this.prevMenu = prevMenu;
-        this.products = products;
-        this.orders = orders;
+        this.products = Products.getInstance();
+        this.orders = Orders.getInstance();
     }
 }

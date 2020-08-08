@@ -1,14 +1,14 @@
-package com.domaranskiy.entities.menues;
+package com.domaranskiy.menues;
 
-import com.domaranskiy.entities.menues.abs.AbsUserMenu;
-import com.domaranskiy.entities.menues.abs.Menu;
-import com.domaranskiy.entities.models.user.User;
+import com.domaranskiy.menues.abs.AbsUserMenu;
+import com.domaranskiy.menues.abs.Menu;
+import com.domaranskiy.models.user.User;
 
 public class PMAdminMenu extends AbsUserMenu {
     public PMAdminMenu(User user, Menu prevMenu) {
         super(user, prevMenu);
-        setMainItem("1.Write to admin");
-        setSubItem("-1.back");
+        setMainMenuItem("1.Write to admin");
+        setSubMenuItem("-1.back");
     }
 
     @Override

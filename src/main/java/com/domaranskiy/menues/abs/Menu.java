@@ -1,4 +1,6 @@
-package com.domaranskiy.entities.menues.abs;
+package com.domaranskiy.menues.abs;
+
+import com.domaranskiy.models.product.ProductTypes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,11 +28,11 @@ public abstract class Menu {
         subItems.add("0. exit");
     }
 
-    protected void setMainItem(String item) {
+    protected void setMainMenuItem(String item) {
         mainItems.add(item);
     }
 
-    protected void setSubItem(String item) {
+    protected void setSubMenuItem(String item) {
         subItems.add(item);
     }
 
@@ -116,7 +118,7 @@ public abstract class Menu {
     }
 
     protected int getMenuItem() throws Exception {
-        System.out.println("Your input: ");
+        System.out.print("Your input: ");
         try {
             return Integer.parseInt(scanner.nextLine().trim());
         } catch (Exception e) {
@@ -150,5 +152,20 @@ public abstract class Menu {
         } catch (Exception e) {
             throw new Exception("Error getting user age, the age mast be a number");
         }
+    }
+
+    protected String getProductName(){
+        System.out.print("Product name: ");
+        return scanner.nextLine().trim();
+    }
+
+    protected ProductTypes getProductType(){
+        String availableTypes = "Available types are: ";
+        for (ProductTypes type : ProductTypes.values()){
+            availableTypes += type.name().toLowerCase() + ", ";
+        }
+        System.out.println(availableTypes.substring(0,availableTypes.length()-1));
+        System.out.print("Type: ");
+        return ProductTypes.valueOf(scanner.nextLine().trim().toUpperCase());
     }
 }

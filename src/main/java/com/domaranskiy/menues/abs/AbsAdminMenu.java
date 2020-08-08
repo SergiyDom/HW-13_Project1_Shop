@@ -1,6 +1,6 @@
-package com.domaranskiy.entities.menues.abs;
+package com.domaranskiy.menues.abs;
 
-import com.domaranskiy.entities.models.user.User;
+import com.domaranskiy.models.user.User;
 
 public abstract class AbsAdminMenu extends Menu {
     protected User user;

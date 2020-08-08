@@ -1,10 +1,10 @@
-package com.domaranskiy.entities.menues;
+package com.domaranskiy.menues;
 
-import com.domaranskiy.entities.menues.abs.AbsUserMenu;
-import com.domaranskiy.entities.menues.abs.Menu;
-import com.domaranskiy.entities.models.order.Order;
-import com.domaranskiy.entities.models.order.OrderStatus;
-import com.domaranskiy.entities.models.user.User;
+import com.domaranskiy.menues.abs.AbsUserMenu;
+import com.domaranskiy.menues.abs.Menu;
+import com.domaranskiy.models.order.Order;
+import com.domaranskiy.models.order.OrderStatus;
+import com.domaranskiy.models.user.User;
 
 public class ClosedOrderMenu extends AbsUserMenu {
     final OrderStatus status = OrderStatus.CLOSED;
@@ -15,8 +15,8 @@ public class ClosedOrderMenu extends AbsUserMenu {
 
         setMenuNameSuffix(order.getProductName() + "/" + order.getQuantity());
 
-        setMainItem("You cannot interact with closed orders");
-        setSubItem("-1.back");
+        setMainMenuItem("You cannot interact with closed orders");
+        setSubMenuItem("-1.back");
     }
 
     @Override

@@ -1,10 +1,10 @@
-package com.domaranskiy.entities.menues;
+package com.domaranskiy.menues;
 
-import com.domaranskiy.entities.menues.abs.AbsUserMenu;
-import com.domaranskiy.entities.menues.abs.Menu;
-import com.domaranskiy.entities.models.order.Order;
-import com.domaranskiy.entities.models.order.OrderStatus;
-import com.domaranskiy.entities.models.user.User;
+import com.domaranskiy.menues.abs.AbsUserMenu;
+import com.domaranskiy.menues.abs.Menu;
+import com.domaranskiy.models.order.Order;
+import com.domaranskiy.models.order.OrderStatus;
+import com.domaranskiy.models.user.User;
 
 import java.util.ArrayList;
 
@@ -16,7 +16,7 @@ public class OrdersListMenu extends AbsUserMenu {
         this.status = status;
 
         setMenuNamePrefix(status.getDescription());
-        setSubItem("-1.back");
+        setSubMenuItem("-1.back");
     }
 
     @Override
@@ -24,15 +24,15 @@ public class OrdersListMenu extends AbsUserMenu {
         switch (getMenuItem()) {
             case 0 -> System.exit(0);
             case -1 -> prevMenu.run();
-            default -> prcessUserInput(getMenuItem()); //чи потрібно було getMenuItem() замінити на int
+            default -> processUserInput(getMenuItem());
         }
     }
 
-    private void prcessUserInput(int menuItem) {
+    private void processUserInput(int menuItem) {
         int listIndex = menuItem - 1;
         switch (status) {
-            case IN_CART -> new InCartOrderMenu(user, getOrderList().get(listIndex), this);
-            case CLOSED -> new ClosedOrderMenu(user, getOrderList().get(listIndex), this);
+            case IN_CART -> new InCartOrderMenu(user, getOrderList().get(listIndex), this).run();
+            case CLOSED -> new ClosedOrderMenu(user, getOrderList().get(listIndex), this).run();
         }
     }
 

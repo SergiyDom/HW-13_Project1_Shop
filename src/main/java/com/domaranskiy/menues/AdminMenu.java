@@ -1,8 +1,8 @@
-package com.domaranskiy.entities.menues;
+package com.domaranskiy.menues;
 
-import com.domaranskiy.entities.menues.abs.AbsAdminMenu;
-import com.domaranskiy.entities.menues.abs.Menu;
-import com.domaranskiy.entities.models.user.User;
+import com.domaranskiy.menues.abs.AbsAdminMenu;
+import com.domaranskiy.menues.abs.Menu;
+import com.domaranskiy.models.user.User;
 
 public class AdminMenu extends AbsAdminMenu {
     public AdminMenu(User user, Menu prevMenu) {

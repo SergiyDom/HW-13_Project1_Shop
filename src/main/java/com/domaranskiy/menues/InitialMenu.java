@@ -1,16 +1,16 @@
-package com.domaranskiy.entities.menues;
+package com.domaranskiy.menues;
 
 import com.domaranskiy.database.Users;
-import com.domaranskiy.entities.menues.abs.Menu;
-import com.domaranskiy.entities.models.user.User;
+import com.domaranskiy.menues.abs.Menu;
+import com.domaranskiy.models.user.User;
 
 public class InitialMenu extends Menu {
     Users users;
 
     public InitialMenu() {
         users = Users.getInstance();
-        setMainItem("1. Log in");
-        setMainItem("2. Sing in");
+        setMainMenuItem("1. Log in");
+        setMainMenuItem("2. Sing in");
     }
 
     @Override
