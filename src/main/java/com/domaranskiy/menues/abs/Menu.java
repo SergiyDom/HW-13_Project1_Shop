@@ -44,7 +44,7 @@ public abstract class Menu {
         infoFieldItems.clear();
     }
 
-    protected void resetMainItem() {
+    protected void resetMainMenuItem() {
         mainItems.clear();
     }
 
@@ -58,14 +58,14 @@ public abstract class Menu {
 
     private void setMenuName() {
         if (menuNamePrefix.trim().length() > 0) {
-            menuName = ">>>" + menuNamePrefix + ": " + this.getClass().getSimpleName();
+            menuName = ">>> " + menuNamePrefix + ": " + this.getClass().getSimpleName();
         } else {
-            menuName = ">>>" + this.getClass().getSimpleName();
+            menuName = ">>> " + this.getClass().getSimpleName();
         }
         if (menuNameSuffix.trim().length() > 0) {
-            menuName += ": " + menuNameSuffix + "<<<";
+            menuName += ": " + menuNameSuffix + " <<<";
         } else {
-            menuName += "<<<";
+            menuName += " <<<";
         }
         menuEnding = "";
         menuDelimetr = "";
@@ -100,14 +100,17 @@ public abstract class Menu {
     }
 
     protected void showMenuMessage(String message) {
-        System.out.println("!!!" + message + "!!!");
+        System.out.println("!!! " + message + " !!!");
     }
+
+    abstract protected void handleCallbacks() throws Exception;
 
     abstract protected void navigation() throws Exception;
 
     public void run() {
         while (true) {
             try {
+                handleCallbacks();
                 compileMenu();
                 showMenu();
                 navigation();
@@ -167,5 +170,14 @@ public abstract class Menu {
         System.out.println(availableTypes.substring(0,availableTypes.length()-1));
         System.out.print("Type: ");
         return ProductTypes.valueOf(scanner.nextLine().trim().toUpperCase());
+    }
+
+    protected int getProductQuantity() throws Exception {
+        System.out.print("New quantity: ");
+        try {
+            return Integer.parseInt(scanner.nextLine().trim());
+        }catch (Exception e){
+            throw new Exception("Error getting new quantity, the quantity must be a number");
+        }
     }
 }

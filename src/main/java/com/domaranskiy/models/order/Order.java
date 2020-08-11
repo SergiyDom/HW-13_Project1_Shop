@@ -9,7 +9,7 @@ import lombok.Setter;
 public class Order {
     private String userName;
     private String productName;
-    private ProductTypes productTypes;
+    private ProductTypes productType;
     private int quantity;
     private OrderStatus orderStatus;
     private OrderEditStatus editStatus;
@@ -23,7 +23,7 @@ public class Order {
     ) {
         this.userName = userName;
         this.productName = productName;
-        this.productTypes = productTypes;
+        this.productType = productTypes;
         this.quantity = quantity;
         this.orderStatus = orderStatus;
         this.editStatus = editStatus;

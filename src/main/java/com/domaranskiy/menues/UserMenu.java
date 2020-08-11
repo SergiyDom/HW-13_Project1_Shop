@@ -13,7 +13,7 @@ public class UserMenu extends AbsUserMenu {
         setMainMenuItem("1.Products menu");
         setMainMenuItem("2.My orders menu");
         setMainMenuItem("3.PM admin(s)");
-        setMainMenuItem("-1.back");
+        setSubMenuItem("-1.back");
     }
 
     @Override

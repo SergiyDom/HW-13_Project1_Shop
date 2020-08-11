@@ -1,4 +1,4 @@
-package com.domaranskiy.entities.models.user;
+package com.domaranskiy.models.user;
 
 import lombok.Getter;
 import lombok.Setter;

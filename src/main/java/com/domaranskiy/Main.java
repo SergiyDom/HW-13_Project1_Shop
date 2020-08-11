@@ -1,6 +1,6 @@
 package com.domaranskiy;
 
-import com.domaranskiy.entities.menues.InitialMenu;
+import com.domaranskiy.menues.InitialMenu;
 
 public class Main {
     public static void main(String[] args) {

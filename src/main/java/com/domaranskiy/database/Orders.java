@@ -46,16 +46,16 @@ public class Orders {
         if (checkIfActiveOrderExists(userName, productName, productTypes)) {
             Order order = getOrder(userName, productName, productTypes);
             order.setQuantity(order.getQuantity() + quantity);
-        }else {
+        } else {
             orderList.add(new Order(userName, productName, productTypes, quantity, OrderStatus.IN_CART, OrderEditStatus.EDITABLE));
         }
     }
 
-    private boolean checkIfActiveOrderExists(String userName, String productName, ProductTypes productTypes) {
+    public boolean checkIfActiveOrderExists(String userName, String productName, ProductTypes productTypes) {
         for (Order order : orderList) {
             if (order.getUserName().equals(userName)
                     && order.getProductName().equals(productName)
-                    && order.getProductTypes().equals(productTypes)
+                    && order.getProductType().equals(productTypes)
                     && order.getOrderStatus().equals(OrderStatus.IN_CART)
             ) {
                 return true;
@@ -64,16 +64,25 @@ public class Orders {
         return false;
     }
 
-    private Order getOrder(String userName, String productName, ProductTypes productTypes) throws Exception {
+    public Order getOrder(String userName, String productName, ProductTypes productTypes) throws Exception {
         for (Order order : orderList) {
             if (order.getUserName().equals(userName)
                     && order.getProductName().equals(productName)
-                    && order.getProductTypes().equals(productTypes)
+                    && order.getProductType().equals(productTypes)
                     && order.getOrderStatus().equals(OrderStatus.IN_CART)
             ) {
                 return order;
             }
         }
         throw new Exception("Order not found");
+    }
+
+    public void deleteOrder(Order order) {
+        for (Order previousOrder : orderList) {
+            if (previousOrder.equals(order)) {
+                orderList.remove(order);
+                return;
+            }
+        }
     }
 }

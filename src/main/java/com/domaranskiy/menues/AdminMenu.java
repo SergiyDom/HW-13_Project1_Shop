@@ -10,6 +10,11 @@ public class AdminMenu extends AbsAdminMenu {
     }
 
     @Override
+    protected void handleCallbacks() {
+
+    }
+
+    @Override
     protected void navigation() throws Exception {
 
     }

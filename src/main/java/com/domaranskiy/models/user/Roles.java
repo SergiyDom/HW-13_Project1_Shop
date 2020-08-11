@@ -1,4 +1,4 @@
-package com.domaranskiy.entities.models.user;
+package com.domaranskiy.models.user;
 
 public enum Roles {
     ADMIN(1),

@@ -13,7 +13,7 @@ public class ProductMenu extends AbsUserMenu {
 
         setMenuNamePrefix(product.getName());
         setMainMenuItem("1.Add to cart");
-        setMainMenuItem("-1.back");
+        setSubMenuItem("-1.back");
     }
 
     @Override

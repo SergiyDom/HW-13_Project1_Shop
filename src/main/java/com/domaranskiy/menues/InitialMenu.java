@@ -14,6 +14,11 @@ public class InitialMenu extends Menu {
     }
 
     @Override
+    protected void handleCallbacks() {
+
+    }
+
+    @Override
     protected void navigation() throws Exception {
         switch (getMenuItem()) {
             case 1 -> logIn();

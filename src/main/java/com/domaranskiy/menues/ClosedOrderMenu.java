@@ -21,6 +21,10 @@ public class ClosedOrderMenu extends AbsUserMenu {
 
     @Override
     protected void navigation() throws Exception {
-
+        switch (getMenuItem()) {
+            case 0 -> System.exit(0);
+            case -1 -> prevMenu.run();
+            default -> showMenuMessage("Unknown menu item");
+        }
     }
 }
