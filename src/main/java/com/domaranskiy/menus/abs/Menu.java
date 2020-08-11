@@ -1,4 +1,4 @@
-package com.domaranskiy.menues.abs;
+package com.domaranskiy.menus.abs;
 
 import com.domaranskiy.models.product.ProductTypes;
 
@@ -179,5 +179,10 @@ public abstract class Menu {
         }catch (Exception e){
             throw new Exception("Error getting new quantity, the quantity must be a number");
         }
+    }
+
+    protected String getMessageBody(){
+        System.out.print("Message body: ");
+        return scanner.nextLine();
     }
 }

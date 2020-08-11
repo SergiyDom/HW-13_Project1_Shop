@@ -1,5 +1,6 @@
-package com.domaranskiy.menues.abs;
+package com.domaranskiy.menus.abs;
 
+import com.domaranskiy.database.Messages;
 import com.domaranskiy.database.Orders;
 import com.domaranskiy.database.Products;
 import com.domaranskiy.models.order.Order;
@@ -12,12 +13,14 @@ public abstract class AbsUserMenu extends Menu {
     protected Menu prevMenu;
     protected Products products;
     protected Orders orders;
+    protected Messages messages;
 
     public AbsUserMenu(User user, Menu prevMenu) {
         this.user = user;
         this.prevMenu = prevMenu;
         this.products = Products.getInstance();
         this.orders = Orders.getInstance();
+        this.messages = Messages.getInstance();
     }
 
     @Override

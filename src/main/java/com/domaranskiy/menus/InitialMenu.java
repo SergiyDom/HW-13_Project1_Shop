@@ -1,7 +1,9 @@
-package com.domaranskiy.menues;
+package com.domaranskiy.menus;
 
 import com.domaranskiy.database.Users;
-import com.domaranskiy.menues.abs.Menu;
+import com.domaranskiy.menus.abs.Menu;
+import com.domaranskiy.menus.admin.AdminMenu;
+import com.domaranskiy.menus.user.UserMenu;
 import com.domaranskiy.models.user.User;
 
 public class InitialMenu extends Menu {

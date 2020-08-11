@@ -1,7 +1,7 @@
-package com.domaranskiy.menues;
+package com.domaranskiy.menus.admin;
 
-import com.domaranskiy.menues.abs.AbsAdminMenu;
-import com.domaranskiy.menues.abs.Menu;
+import com.domaranskiy.menus.abs.AbsAdminMenu;
+import com.domaranskiy.menus.abs.Menu;
 import com.domaranskiy.models.user.User;
 
 public class AdminMenu extends AbsAdminMenu {

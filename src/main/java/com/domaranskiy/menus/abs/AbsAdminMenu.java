@@ -1,4 +1,4 @@
-package com.domaranskiy.menues.abs;
+package com.domaranskiy.menus.abs;
 
 import com.domaranskiy.models.user.User;
 

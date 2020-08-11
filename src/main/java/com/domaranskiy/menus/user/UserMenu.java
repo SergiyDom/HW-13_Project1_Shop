@@ -1,12 +1,12 @@
-package com.domaranskiy.menues;
+package com.domaranskiy.menus.user;
 
-import com.domaranskiy.menues.abs.AbsUserMenu;
-import com.domaranskiy.menues.abs.Menu;
+import com.domaranskiy.menus.abs.AbsUserMenu;
+import com.domaranskiy.menus.abs.Menu;
 import com.domaranskiy.models.user.User;
 
 public class UserMenu extends AbsUserMenu {
 
-    protected UserMenu(User user, Menu prevMenu) {
+    public UserMenu(User user, Menu prevMenu) {
         super(user, prevMenu);
 
         setMenuNamePrefix(user.getName());
